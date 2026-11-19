@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HavenCare Hospital | Exceptional Healthcare</title>
+
+<meta name="description" content="HavenCare Hospital - Compassionate healthcare, modern facilities and dedicated medical professionals.">
+
+<style>
+:root {
+  --ruby: #9B101D;
+  --bordeaux: #3F0E13;
+  --white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--ruby);
+  color: var(--white);
+  line-height: 1.7;
+}
+
+header {
+  background: var(--bordeaux);
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.logo span {
+  color: #E7B8BD;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #E7B8BD;
+}
+
+.hero {
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  padding: 80px 9%;
+  background:
+    linear-gradient(90deg, #3F0E13 10%, #9B101D99 100%),
+    url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1600&q=85");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.tag {
+  font-size: 13px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: #F0C5C9;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 7vw, 68px);
+  line-height: 1.15;
+  margin: 22px 0;
+}
+
+.hero p {
+  font-size: 17px;
+  margin-bottom: 30px;
+  color: #FFF0F1;
+  max-width: 520px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 27px;
+  background: var(--white);
+  color: var(--bordeaux);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #E7B8BD;
+  transform: translateY(-3px);
+}
+
+section {
+  padding: 85px 8%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-title small {
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+.about {
+  background: var(--bordeaux);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.about img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.about h2 {
+  font-size: 37px;
+  margin: 15px 0;
+}
+
+.about p {
+  margin-bottom: 18px;
+  color: #F5DADD;
+}
+
+.services {
+  background: var(--ruby);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  background: var(--bordeaux);
+  padding: 30px;
+  border-radius: 7px;
+  border: 1px solid #FFFFFF25;
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--white);
+}
+
+.service-card .icon {
+  font-size: 35px;
+}
+
+.service-card h3 {
+  margin: 14px 0 8px;
+}
+
+.service-card p {
+  color: #F2D9DC;
+  font-size: 14px;
+}
+
+.doctors {
+  background: var(--bordeaux);
+}
+
+.doctor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.doctor-card {
+  background: var(--ruby);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.doctor-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.doctor-card h3 {
+  margin-top: 15px;
+}
+
+.doctor-card p {
+  color: #F5DADD;
+  font-size: 14px;
+}
+
+.appointment {
+  background: var(--ruby);
+  text-align: center;
+}
+
+.appointment h2 {
+  font-size: 38px;
+  margin: 15px 0;
+}
+
+.appointment p {
+  margin-bottom: 25px;
+}
+
+.contact {
+  background: var(--bordeaux);
+  text-align: center;
+}
+
+.contact-details {
+  margin-top: 30px;
+}
+
+.contact-details p {
+  margin: 13px;
+}
+
+footer {
+  background: var(--bordeaux);
+  border-top: 1px solid #FFFFFF30;
+  text-align: center;
+  padding: 30px 15px;
+  color: #F5DADD;
+  font-size: 13px;
+}
+
+@media(max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .hero {
+    min-height: 500px;
+    padding: 65px 7%;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .service-grid,
+  .doctor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 60px 7%;
+  }
+
+  .section-title h2 {
+    font-size: 29px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">HAVEN<span>CARE</span>.</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#doctors">Doctors</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<div class="hero" id="home">
+  <div class="hero-content">
+    <span class="tag">WELCOME TO HAVENCARE</span>
+
+    <h1>Care That Puts Your Health First.</h1>
+
+    <p>
+      Experience compassionate healthcare,
+      modern medical facilities and a team
+      dedicated to your wellbeing.
+    </p>
+
+    <a href="#contact" class="btn">Get In Touch →</a>
+  </div>
+</div>
+
+<section class="about" id="about">
+
+  <div>
+    <img
+      src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1000&q=85"
+      alt="Healthcare professional"
+    >
+  </div>
+
+  <div>
+    <span class="tag">ABOUT HAVENCARE</span>
+
+    <h2>Healthcare With Compassion and Excellence.</h2>
+
+    <p>
+      We believe quality healthcare begins with
+      understanding every patient's needs.
+    </p>
+
+    <p>
+      Our vision is to create a welcoming
+      healthcare environment where patients
+      receive respectful and attentive care.
+    </p>
+
+    <a href="#services" class="btn">Explore Our Services</a>
+  </div>
+
+</section>
+
+<section class="services" id="services">
+
+  <div class="section-title">
+    <small>WHAT WE OFFER</small>
+    <h2>Our Medical Services</h2>
+    <p>Comprehensive care for your health journey.</p>
+  </div>
+
+  <div class="service-grid">
+
+    <div class="service-card">
+      <div class="icon">🩺</div>
+      <h3>Outpatient Care</h3>
+      <p>Medical consultations and general health assessments.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">🔬</div>
+      <h3>Laboratory</h3>
+      <p>Diagnostic testing and laboratory services.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">🦷</div>
+      <h3>Dental Care</h3>
+      <p>Dental consultations and oral healthcare.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">👶</div>
+      <h3>Maternity Care</h3>
+      <p>Maternal healthcare and newborn support.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">💊</div>
+      <h3>Pharmacy</h3>
+      <p>Access to prescribed medicines and pharmacy services.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">❤️</div>
+      <h3>General Healthcare</h3>
+      <p>General medical support and health consultations.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="doctors" id="doctors">
+
+  <div class="section-title">
+    <small>OUR MEDICAL TEAM</small>
+    <h2>Meet Our Specialists</h2>
+    <p>Dedicated professionals committed to patient care.</p>
+  </div>
+
+  <div class="doctor-grid">
+
+    <div class="doctor-card">
+      <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=700&q=85" alt="Doctor portrait">
+      <h3>Medical Specialist</h3>
+      <p>General Medicine</p>
+    </div>
+
+    <div class="doctor-card">
+      <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&q=85" alt="Doctor portrait">
+      <h3>Medical Specialist</h3>
+      <p>Patient Care</p>
+    </div>
+
+    <div class="doctor-card">
+      <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=700&q=85" alt="Doctor portrait">
+      <h3>Medical Specialist</h3>
+      <p>Clinical Services</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="appointment">
+
+  <span class="tag">YOUR HEALTH MATTERS</span>
+
+  <h2>We're Here When You Need Us.</h2>
+
+  <p>Reach out to our team for appointment enquiries.</p>
+
+  <a href="#contact" class="btn">Contact Our Team →</a>
+
+</section>
+
+<section class="contact" id="contact">
+
+  <div class="section-title">
+    <small>GET IN TOUCH</small>
+    <h2>Contact HavenCare</h2>
+    <p>We welcome your enquiries.</p>
+  </div>
+
+  <div class="contact-details">
+    <p>📍 Location: Add Hospital Address</p>
+    <p>📞 Phone: Add Hospital Telephone</p>
+    <p>✉️ Email: Add Hospital Email</p>
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 HavenCare Hospital. All Rights Reserved.</p>
+  <p>Compassion • Excellence • Care</p>
+</footer>
+
+</body>
+  </html>
+  
